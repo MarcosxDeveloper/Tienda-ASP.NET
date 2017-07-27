@@ -1,0 +1,17 @@
+﻿@model IEnumerable<TiendaEnLinea.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Explorar Categorias</h2>
+<p>
+    Select from @Model.Count();
+    generos:
+</p>
+<ul>
+    @foreach (var categoria in Model)
+    {
+        <li>@Html.ActionLink(categoria.Nombre, "Browse", new { categoria = categoria.Nombre })</li>
+    }
+</ul>

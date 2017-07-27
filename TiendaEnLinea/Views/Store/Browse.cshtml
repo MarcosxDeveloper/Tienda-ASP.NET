@@ -1,0 +1,16 @@
+﻿@model TiendaEnLinea.Models.Categoria
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Categoria: @Model.Nombre</h2>
+<ul>
+    @foreach (var articulo in Model.Articulos)
+    {
+        <li>
+            @Html.ActionLink(articulo.Titulo, "Details", new { id = articulo.ArticuloId })
+        </li>
+    }
+</ul>
+
